@@ -36,7 +36,7 @@ public class RequestPostServlet extends HttpServlet {
 		// 뽑기 전!!!  *******에 인코딩 설정 해야됨 => UTF-8로!!
 		request.setCharacterEncoding("UTF-8");
 		
-		String name = request.getParameter("name"); // "차은우" | ""
+		String name = request.getParameter("name"); // "정민교" | ""
 		String gender = request.getParameter("gender"); // "M" | "F" | null
 		int age = Integer.parseInt(request.getParameter("age")); // "20" => 20 | "" => 오류가뜸 (NumberformatException) : 빈 문자열 숫자로 변환 불가
 		String city = request.getParameter("city");

@@ -30,7 +30,7 @@ public class RequestGetServlet extends HttpServlet {
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
       // Get 방식으로 요청 시 이 doGet 메소드가 저절로 호출됨
-//      System.out.println("이거 잘 실행되나?");
+	  // System.out.println("이거 잘 실행되나?");
       
       /*
        * 첫 번째 매개변수 request에는 요청시 전달된 내용이 담겨있음 (사용자가 입력한 값, 요청전송방식, 요청자의 id)
