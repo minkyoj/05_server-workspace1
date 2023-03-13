@@ -1,0 +1,46 @@
+평가자 체크리스트 3문제
+- web.xml에 서블릿을 등록할 수 있는지? (이거를 10분 수업)
+
+- 서블릿을 작성할 수 있는지? => 서블릿 작성 (vo 클래스, doGet()) = ? 모델, 컨트롤러
+- 메서드를 작성할 수 있는지? => 서비스, dao 작성
+
+
+서술형 대비
+
+1. 윈도우 콘솔 명령어 => cmd
+엄청많음 / 자주쓰는거
+4~5개
+- cd : 
+- dir : 
+- path : 
+- cls : 
+- ipconfig : 
+
+2. jsp scope 객체
+
+
+- 
+- 
+- 
+- 
+
+3. 웹서버 vs 웹애플리케이션서버(WAS) => 
+차이점?
+- 
+
+4. 서블릿, JSP
+- redirect, forward 방식의 차이점??
+
+- 서브릿 응답jsp로 이동하는 방법? (코드로 써라)...
+
+- response 객체에서 문자 인코딩은 utf-8로 변환하는 방법
+response.setcontentType("text/html; charset=utf-8")
+
+- doGet()
+String title = request.getParameter("title");
+
+5. jsp 태그 => page 지시어, include 지시어
+
+- menubar.jsp를 포함하는 jsp 태그를 써라
+
+- error 화면으로 가는 => page 지시어
