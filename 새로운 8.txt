@@ -1,0 +1,60 @@
+		request.setCharacterEncoding("utf-8");
+		
+		String brand = request.getParameter("brand");
+		String price = request.getParameter("price");
+		
+		Water w = new Water();
+		w.setBrand(brand);
+		w.setPrice(price);
+		
+		int result = new WaterService().insertWater(w);
+		
+		if(result>0) {
+			response.sendRedirect(request.getContextPath());
+		}else {
+			request.setAttribute("errorMsg", "공지사항 등록 실패!");
+			RequestDispatcher view = request.getRequestDispatcher("/views/common/errorPage.jsp");
+			view.forward(request, response);
+		}
+		
+		//
+			public int insertWater(Water w) {
+		
+		Connection conn = getConnection();
+		
+		int result = new WaterDao().insertWater(conn, w);
+		
+		if(result>0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		
+		return result;
+	}
+	
+		//
+		public int insertWater(Connection conn, Water w) {
+		
+		int result = 0;
+		PreparedStatement pstmt = null;
+		
+		String sql = prop.getProperty("insertWater");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, w.getBrand());
+			pstmt.setString(2, w.getPrice());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
